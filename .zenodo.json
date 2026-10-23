@@ -1,0 +1,15 @@
+{
+  "title": "Code and grouped split for: Near-Duplicate Data Leakage Inflates Deep Learning Performance in Multiclass Kidney Disease Classification from CT",
+  "upload_type": "software",
+  "description": "Code, grouped (duplicate-aware) split file, result tables and the deployed INT8 research-prototype model for a study of near-duplicate leakage on the CT-KIDNEY dataset. The split file lists all 12,446 images with MD5, dHash and pHash codes, group id and split; the images themselves are not redistributed and are available from figshare (doi:10.6084/m9.figshare.30342133.v1). The application is a research prototype and is not a medical device.",
+  "creators": [
+    {"name": "V, Sethumadhavan", "affiliation": "Vellore Institute of Technology, Vellore, India"},
+    {"name": "J, Prabhu", "affiliation": "Vellore Institute of Technology, Vellore, India"}
+  ],
+  "keywords": ["kidney CT", "data leakage", "near-duplicate images", "grouped evaluation", "deep learning", "reproducibility"],
+  "license": "MIT",
+  "access_right": "open",
+  "related_identifiers": [
+    {"identifier": "10.6084/m9.figshare.30342133.v1", "relation": "isDerivedFrom", "scheme": "doi", "resource_type": "dataset"}
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "classes": [
+    "Cyst",
+    "Normal",
+    "Stone",
+    "Tumor"
+  ],
+  "img_size": 224,
+  "model_file": "student_int8.onnx",
+  "is_int8": true,
+  "student_backbone": "resnet18.a1_in1k",
+  "temperature": 0.62,
+  "conf_threshold": 0.961422324180603,
+  "target_coverage": 0.9,
+  "q_hat": 0.9986099004745483,
+  "conformal_alpha": 0.1,
+  "calibrated_on": "shipped model; temperature on half the validation groups, threshold and q_hat on the other half (q_hat weighted so each scan counts once)",
+  "dap_thresholds": {
+    "dhash": 4,
+    "phash": 7
+  },
+  "teacher_reference": {
+    "model": "RenalDualNet seed 42",
+    "test_accuracy": 0.9710610932475884,
+    "test_macro_f1": 0.9622256042327535
+  },
+  "test_accuracy": 0.9683815648445874,
+  "test_macro_f1": 0.9640464948376161,
+  "evaluated_on": "full DAP test split, shipped ONNX model"
+}

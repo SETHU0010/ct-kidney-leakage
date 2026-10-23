@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this code or the grouped split, please cite it as below."
+title: "Code and grouped split for: Near-Duplicate Data Leakage Inflates Deep Learning Performance in Multiclass Kidney Disease Classification from CT"
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/SETHU0010/ct-kidney-leakage"
+authors:
+  - family-names: "V"
+    given-names: "Sethumadhavan"
+    affiliation: "School of Computer Science Engineering and Information Systems, Vellore Institute of Technology, Vellore, India"
+  - family-names: "J"
+    given-names: "Prabhu"
+    affiliation: "School of Computer Science Engineering and Information Systems, Vellore Institute of Technology, Vellore, India"
+keywords:
+  - kidney CT
+  - data leakage
+  - near-duplicate images
+  - grouped evaluation
+  - deep learning
+references:
+  - type: dataset
+    title: "Multi-class Classification - Normal, Cyst, Tumor, and Stone"
+    authors:
+      - family-names: "Xia"
+        given-names: "P"
+    doi: "10.6084/m9.figshare.30342133.v1"
+    year: 2025

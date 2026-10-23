@@ -1,0 +1,10 @@
+group_id,size,purity,composition,verdict,n_train,n_val,n_test
+66,147,0.5034013605442177,"Normal:74, Stone:61, Cyst:12",over_merged,0,0,147
+177,281,0.5338078291814946,"Normal:150, Tumor:131",over_merged,281,0,0
+82,151,0.5364238410596026,"Normal:81, Cyst:70",over_merged,0,0,151
+109,128,0.578125,"Cyst:74, Normal:54",over_merged,128,0,0
+189,330,0.6121212121212121,"Tumor:202, Normal:128",over_merged,330,0,0
+30,371,0.6684636118598383,"Cyst:248, Tumor:123",over_merged,371,0,0
+33,240,0.7208333333333333,"Stone:173, Cyst:67",over_merged,240,0,0
+190,231,0.7662337662337663,"Tumor:177, Normal:54",over_merged,231,0,0
+85,354,0.9491525423728814,"Normal:336, Stone:18",over_merged,354,0,0

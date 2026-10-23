@@ -1,0 +1,1389 @@
+{
+  "dataset": {
+    "source": {
+      "repository": "figshare",
+      "doi": "10.6084/m9.figshare.30342133.v1",
+      "url": "https://doi.org/10.6084/m9.figshare.30342133.v1",
+      "file": "dataset2.zip",
+      "file_md5": "149a1d47093a4379ef71c5805d956be6",
+      "license": "CC BY 4.0",
+      "md5_verified_this_run": true,
+      "class_roots": [
+        "CT-KIDNEY-DATASET-Normal-Cyst-Tumor-Stone/CT-KIDNEY-DATASET-Normal-Cyst-Tumor-Stone"
+      ]
+    },
+    "provenance_vs_kaggle": {
+      "kaggle_copy_found": true,
+      "kaggle_images": 12446,
+      "figshare_images": 12446,
+      "shared_images_md5_and_class": 12446,
+      "only_in_figshare": 0,
+      "only_in_kaggle": 0,
+      "md5_with_different_class_across_releases": 0,
+      "same_filename_same_bytes": 12446,
+      "same_filename_different_bytes": 0,
+      "identical_file_sequence": true
+    },
+    "n_images": 12446,
+    "classes": [
+      "Cyst",
+      "Normal",
+      "Stone",
+      "Tumor"
+    ],
+    "class_counts": {
+      "Normal": 5077,
+      "Cyst": 3709,
+      "Tumor": 2283,
+      "Stone": 1377
+    },
+    "imbalance_ratio": 3.6870007262164126
+  },
+  "dap": {
+    "dhash_threshold": 4,
+    "phash_threshold": 7,
+    "near_duplicate_pairs": 131120,
+    "n_groups": 193,
+    "singleton_groups": 2,
+    "images_in_multi_groups": 12444,
+    "largest_group_frac": 0.029808773903262094,
+    "byte_identical_duplicates": 517,
+    "cross_class_groups": 9,
+    "cross_class_images_frac": 0.17941507311586052
+  },
+  "leakage_gate": {
+    "train_val_overlap": 0,
+    "train_test_overlap": 0,
+    "val_test_overlap": 0,
+    "cross_split_duplicate_pairs": 0,
+    "md5_across_splits": 0
+  },
+  "split_sizes": {
+    "train": 8711,
+    "val": 1869,
+    "test": 1866
+  },
+  "test_groups": 31,
+  "primary_model": "RenalDualNet (concat fusion)",
+  "primary_results": {
+    "accuracy": 0.9710610932475884,
+    "precision_macro": 0.9685258226829179,
+    "recall_macro": 0.9564517832984298,
+    "f1_macro": 0.9622256042327535,
+    "f1_weighted": 0.970845433347295,
+    "specificity_macro": 0.9895981082077622,
+    "mcc": 0.9584694998701948,
+    "kappa": 0.958347801069455,
+    "auc_ovr_macro": 0.9974233886453601,
+    "pr_auc_macro": 0.9931442917088066
+  },
+  "bootstrap_ci": {
+    "accuracy": {
+      "mean": 0.9703095945646393,
+      "std": 0.010561700211177872,
+      "ci_low": 0.9483080990127655,
+      "ci_high": 0.9886859885588002
+    },
+    "f1_macro": {
+      "mean": 0.9562431840272027,
+      "std": 0.01621418657691196,
+      "ci_low": 0.9181953496421167,
+      "ci_high": 0.9826263130396722
+    },
+    "precision_macro": {
+      "mean": 0.9601461482251183,
+      "std": 0.019540212777734323,
+      "ci_low": 0.9114235737666232,
+      "ci_high": 0.9890499172461573
+    },
+    "recall_macro": {
+      "mean": 0.9544684020820167,
+      "std": 0.01620996734453628,
+      "ci_low": 0.9193667384935794,
+      "ci_high": 0.9815403266954721
+    },
+    "specificity_macro": {
+      "mean": 0.9892905276777295,
+      "std": 0.003798509326134271,
+      "ci_low": 0.9811167487273861,
+      "ci_high": 0.9959864047191936
+    },
+    "mcc": {
+      "mean": 0.9557638359099074,
+      "std": 0.014965173072263591,
+      "ci_low": 0.9243283760181812,
+      "ci_high": 0.9831222369542992
+    },
+    "kappa": {
+      "mean": 0.9554436324885488,
+      "std": 0.015134086662207618,
+      "ci_low": 0.9238804550199833,
+      "ci_high": 0.9830290137112534
+    },
+    "auc_ovr_macro": {
+      "mean": 0.9972386691137373,
+      "std": 0.002136639297321156,
+      "ci_low": 0.9919638211912024,
+      "ci_high": 0.9998444805150071
+    },
+    "pr_auc_macro": {
+      "mean": 0.9916785627689504,
+      "std": 0.006797136245066174,
+      "ci_low": 0.9739273487413714,
+      "ci_high": 0.9993592935441625
+    }
+  },
+  "calibration": {
+    "selected": "None (T=1)",
+    "selection_criterion": "cross-fitted adaptive ECE inside the validation FIT half (fit on half the groups, scored on the other half); threshold and q_hat on the disjoint CAL half, q_hat at scan level",
+    "temperature_deployed": 1.0,
+    "diagnostics": {
+      "T": 1.1087924242019653,
+      "val_accuracy": 0.8835877776145935,
+      "mean_confidence": 0.9074822068214417,
+      "nll_before": 0.4290599524974823,
+      "nll_after": 0.42464694380760193,
+      "nll_improvement": 0.004413008689880371,
+      "grad_at_T1": 0.08500801026821136,
+      "ok": true
+    },
+    "problems": [],
+    "comparison": {
+      "None (T=1)": {
+        "val_fit_ECE_mass": 0.085001,
+        "val_cal_ECE_mass": 0.057861,
+        "test_ECE_mass": 0.049895,
+        "test_ECE_width": 0.051131,
+        "test_MCE": 0.078669,
+        "test_Brier": 0.046268,
+        "test_meanconf": 0.9295480251312256,
+        "test_acc": 0.971061,
+        "val_fit_crossfit_ECE_mass": 0.091814
+      },
+      "Temp NLL (T=1.109)": {
+        "val_fit_ECE_mass": 0.089339,
+        "val_cal_ECE_mass": 0.074064,
+        "test_ECE_mass": 0.067817,
+        "test_ECE_width": 0.072299,
+        "test_MCE": 0.10425,
+        "test_Brier": 0.049793,
+        "test_meanconf": 0.9063839912414551,
+        "test_acc": 0.971061,
+        "val_fit_crossfit_ECE_mass": 0.110897
+      },
+      "Temp ECE (T=0.940)": {
+        "val_fit_ECE_mass": 0.081215,
+        "val_cal_ECE_mass": 0.048605,
+        "test_ECE_mass": 0.042519,
+        "test_ECE_width": 0.0439,
+        "test_MCE": 0.067528,
+        "test_Brier": 0.045147,
+        "test_meanconf": 0.9411860108375549,
+        "test_acc": 0.971061,
+        "val_fit_crossfit_ECE_mass": 0.097683
+      },
+      "Vector scaling": {
+        "val_fit_ECE_mass": 0.019182,
+        "val_cal_ECE_mass": 0.07548,
+        "test_ECE_mass": 0.028379,
+        "test_ECE_width": 0.021666,
+        "test_MCE": 0.146173,
+        "test_Brier": 0.091083,
+        "test_meanconf": 0.9421700239181519,
+        "test_acc": 0.948017,
+        "val_fit_crossfit_ECE_mass": 0.163364
+      }
+    }
+  },
+  "selective_prediction": {
+    "rule": "confidence threshold at target coverage (validation)",
+    "threshold": 0.849373996257782,
+    "target_coverage": 0.9,
+    "operating_points": [
+      {
+        "target_coverage": 1.0,
+        "threshold": -Infinity,
+        "actual_coverage": 1.0,
+        "accuracy_answered": 0.971061,
+        "macroF1_answered": 0.962226,
+        "referred": 0.0,
+        "min_class_coverage": 1.0,
+        "least_covered_class": "Cyst"
+      },
+      {
+        "target_coverage": 0.95,
+        "threshold": 0.691056,
+        "actual_coverage": 0.978564,
+        "accuracy_answered": 0.983023,
+        "macroF1_answered": 0.979266,
+        "referred": 0.021436,
+        "min_class_coverage": 0.931707,
+        "least_covered_class": "Stone"
+      },
+      {
+        "target_coverage": 0.9,
+        "threshold": 0.849374,
+        "actual_coverage": 0.954448,
+        "accuracy_answered": 0.988209,
+        "macroF1_answered": 0.986021,
+        "referred": 0.045552,
+        "min_class_coverage": 0.878049,
+        "least_covered_class": "Stone"
+      },
+      {
+        "target_coverage": 0.85,
+        "threshold": 0.901948,
+        "actual_coverage": 0.912111,
+        "accuracy_answered": 0.994125,
+        "macroF1_answered": 0.992805,
+        "referred": 0.087889,
+        "min_class_coverage": 0.829268,
+        "least_covered_class": "Stone"
+      },
+      {
+        "target_coverage": 0.8,
+        "threshold": 0.918536,
+        "actual_coverage": 0.866024,
+        "accuracy_answered": 0.998144,
+        "macroF1_answered": 0.997643,
+        "referred": 0.133976,
+        "min_class_coverage": 0.8,
+        "least_covered_class": "Stone"
+      },
+      {
+        "target_coverage": 0.7,
+        "threshold": 0.923997,
+        "actual_coverage": 0.754019,
+        "accuracy_answered": 0.997868,
+        "macroF1_answered": 0.997627,
+        "referred": 0.245981,
+        "min_class_coverage": 0.607562,
+        "least_covered_class": "Normal"
+      },
+      {
+        "target_coverage": 0.6,
+        "threshold": 0.925784,
+        "actual_coverage": 0.651125,
+        "accuracy_answered": 0.997531,
+        "macroF1_answered": 0.997618,
+        "referred": 0.348875,
+        "min_class_coverage": 0.361147,
+        "least_covered_class": "Normal"
+      },
+      {
+        "target_coverage": 0.5,
+        "threshold": 0.942061,
+        "actual_coverage": 0.476956,
+        "accuracy_answered": 0.997753,
+        "macroF1_answered": 0.998151,
+        "referred": 0.523044,
+        "min_class_coverage": 0.0,
+        "least_covered_class": "Normal"
+      }
+    ],
+    "conformal_sweep": [
+      {
+        "alpha": 0.01,
+        "target_cov": 0.99,
+        "q_hat": 0.994932,
+        "q_hat_image_level": 0.984212,
+        "cal_groups": 18,
+        "empirical_cov": 1.0,
+        "avg_set_size": 3.726688,
+        "singleton_rate": 0.024116,
+        "empty_before_fix": 0,
+        "acc_on_singletons": 1.0,
+        "threshold": 0.005068,
+        "regime": "valid"
+      },
+      {
+        "alpha": 0.05,
+        "target_cov": 0.95,
+        "q_hat": 0.994932,
+        "q_hat_image_level": 0.805513,
+        "cal_groups": 18,
+        "empirical_cov": 1.0,
+        "avg_set_size": 3.726688,
+        "singleton_rate": 0.024116,
+        "empty_before_fix": 0,
+        "acc_on_singletons": 1.0,
+        "threshold": 0.005068,
+        "regime": "valid"
+      },
+      {
+        "alpha": 0.1,
+        "target_cov": 0.9,
+        "q_hat": 0.994932,
+        "q_hat_image_level": 0.333615,
+        "cal_groups": 18,
+        "empirical_cov": 1.0,
+        "avg_set_size": 3.726688,
+        "singleton_rate": 0.024116,
+        "empty_before_fix": 0,
+        "acc_on_singletons": 1.0,
+        "threshold": 0.005068,
+        "regime": "valid"
+      },
+      {
+        "alpha": 0.2,
+        "target_cov": 0.8,
+        "q_hat": 0.794112,
+        "q_hat_image_level": 0.088142,
+        "cal_groups": 18,
+        "empirical_cov": 0.984459,
+        "avg_set_size": 1.030011,
+        "singleton_rate": 0.969989,
+        "empty_before_fix": 0,
+        "acc_on_singletons": 0.983978,
+        "threshold": 0.205888,
+        "regime": "valid"
+      },
+      {
+        "alpha": 0.3,
+        "target_cov": 0.7,
+        "q_hat": 0.308944,
+        "q_hat_image_level": 0.076206,
+        "cal_groups": 18,
+        "empirical_cov": 0.971061,
+        "avg_set_size": 1.0,
+        "singleton_rate": 1.0,
+        "empty_before_fix": 40,
+        "acc_on_singletons": 0.971061,
+        "threshold": 0.691056,
+        "regime": "degenerate (= argmax)"
+      },
+      {
+        "alpha": 0.4,
+        "target_cov": 0.6,
+        "q_hat": 0.077975,
+        "q_hat_image_level": 0.074659,
+        "cal_groups": 18,
+        "empirical_cov": 0.971061,
+        "avg_set_size": 1.0,
+        "singleton_rate": 1.0,
+        "empty_before_fix": 321,
+        "acc_on_singletons": 0.971061,
+        "threshold": 0.922025,
+        "regime": "degenerate (= argmax)"
+      }
+    ]
+  },
+  "baselines": {
+    "RenalDualNet": {
+      "accuracy": 0.9710610932475884,
+      "precision_macro": 0.9685258226829179,
+      "recall_macro": 0.9564517832984298,
+      "f1_macro": 0.9622256042327535,
+      "f1_weighted": 0.970845433347295,
+      "specificity_macro": 0.9895981082077622,
+      "mcc": 0.9584694998701948,
+      "kappa": 0.958347801069455,
+      "auc_ovr_macro": 0.9974233886453601,
+      "pr_auc_macro": 0.9931442917088066,
+      "params_M": 56.129502,
+      "ci_f1_low": 0.9181953496421167,
+      "ci_f1_high": 0.9826263130396722
+    },
+    "resnet50": {
+      "accuracy": 0.8563772775991425,
+      "precision_macro": 0.8959029338216065,
+      "recall_macro": 0.7857487393384665,
+      "f1_macro": 0.8061714879085955,
+      "f1_weighted": 0.8383116901871231,
+      "specificity_macro": 0.9428935901535762,
+      "mcc": 0.8002372156681159,
+      "kappa": 0.785960815465633,
+      "auc_ovr_macro": 0.9615536166606826,
+      "pr_auc_macro": 0.9086052895673488,
+      "params_M": 23.516228,
+      "ci_f1_low": 0.6977919044078523,
+      "ci_f1_high": 0.88729113445652
+    },
+    "efficientnet_b0": {
+      "accuracy": 0.9314040728831725,
+      "precision_macro": 0.9264242487004237,
+      "recall_macro": 0.9052619122477469,
+      "f1_macro": 0.913364861990452,
+      "f1_weighted": 0.9300606087990936,
+      "specificity_macro": 0.9752136094992039,
+      "mcc": 0.9019216587418212,
+      "kappa": 0.900813226232038,
+      "auc_ovr_macro": 0.9804358058694612,
+      "pr_auc_macro": 0.9545110581031224,
+      "params_M": 4.012672,
+      "ci_f1_low": 0.7743337311174948,
+      "ci_f1_high": 0.9653536363725073
+    },
+    "densenet201": {
+      "accuracy": 0.92497320471597,
+      "precision_macro": 0.9224692819375436,
+      "recall_macro": 0.8899943777118584,
+      "f1_macro": 0.9038091551087588,
+      "f1_weighted": 0.9231244921604973,
+      "specificity_macro": 0.9723958375209423,
+      "mcc": 0.89244396525916,
+      "kappa": 0.8910938225634724,
+      "auc_ovr_macro": 0.9646288843430719,
+      "pr_auc_macro": 0.9212744373846069,
+      "params_M": 18.100612,
+      "ci_f1_low": 0.8236625451512161,
+      "ci_f1_high": 0.9395398694393048
+    },
+    "vit_small_patch16_224": {
+      "accuracy": 0.9190782422293676,
+      "precision_macro": 0.9350316538308812,
+      "recall_macro": 0.8445237787671631,
+      "f1_macro": 0.8715182118533259,
+      "f1_weighted": 0.9133800046372722,
+      "specificity_macro": 0.9703401051734142,
+      "mcc": 0.8862003611686954,
+      "kappa": 0.8816300724462639,
+      "auc_ovr_macro": 0.9816758733741342,
+      "pr_auc_macro": 0.9410109167524217,
+      "params_M": 21.667204,
+      "ci_f1_low": 0.770763034320561,
+      "ci_f1_high": 0.9290638821684216
+    },
+    "swin_tiny_patch4_window7_224": {
+      "accuracy": 0.9764201500535906,
+      "precision_macro": 0.9832350239086206,
+      "recall_macro": 0.9586281487149724,
+      "f1_macro": 0.9700137693797236,
+      "f1_weighted": 0.9761191004273625,
+      "specificity_macro": 0.9906221796893522,
+      "mcc": 0.9663258218206031,
+      "kappa": 0.9659446114639536,
+      "auc_ovr_macro": 0.9931816409118368,
+      "pr_auc_macro": 0.9777402973146553,
+      "params_M": 27.52243,
+      "ci_f1_low": 0.9408233817853203,
+      "ci_f1_high": 0.9841958509209265
+    },
+    "convnext_tiny": {
+      "accuracy": 0.9142550911039657,
+      "precision_macro": 0.9357491518313539,
+      "recall_macro": 0.8811080605857354,
+      "f1_macro": 0.8957610093994093,
+      "f1_weighted": 0.9069873262355719,
+      "specificity_macro": 0.9667858572099339,
+      "mcc": 0.8798986888510373,
+      "kappa": 0.8745772295666033,
+      "auc_ovr_macro": 0.9712414508445864,
+      "pr_auc_macro": 0.936282174064887,
+      "params_M": 27.823204,
+      "ci_f1_low": 0.7303424749655665,
+      "ci_f1_high": 0.9565801667815839
+    },
+    "RenalCGAFNet": {
+      "accuracy": 0.939978563772776,
+      "precision_macro": 0.9402696285409131,
+      "recall_macro": 0.9162340299062404,
+      "f1_macro": 0.9252301669776405,
+      "f1_weighted": 0.9396595183535312,
+      "specificity_macro": 0.9794057724463361,
+      "mcc": 0.9147741912451669,
+      "kappa": 0.9138010609062124,
+      "auc_ovr_macro": 0.9843422338716723,
+      "pr_auc_macro": 0.9713677064806978,
+      "params_M": 60.466911,
+      "ci_f1_low": 0.8173485561452745,
+      "ci_f1_high": 0.9581538079663966
+    }
+  },
+  "ablation": {
+    "Local only (ConvNeXt-T)": {
+      "accuracy": 0.9142550911039657,
+      "f1_macro": 0.8957610093994093,
+      "precision_macro": 0.9357491518313539,
+      "recall_macro": 0.8811080605857354,
+      "params_M": 27.823204
+    },
+    "Global only (Swin-T)": {
+      "accuracy": 0.9764201500535906,
+      "f1_macro": 0.9700137693797236,
+      "precision_macro": 0.9832350239086206,
+      "recall_macro": 0.9586281487149724,
+      "params_M": 27.52243
+    },
+    "CGAF attention fusion": {
+      "accuracy": 0.939978563772776,
+      "f1_macro": 0.9252301669776405,
+      "precision_macro": 0.9402696285409131,
+      "recall_macro": 0.9162340299062404,
+      "params_M": 60.466911
+    },
+    "Concat fusion (RenalDualNet)": {
+      "accuracy": 0.9710610932475884,
+      "f1_macro": 0.9622256042327535,
+      "precision_macro": 0.9685258226829179,
+      "recall_macro": 0.9564517832984298,
+      "params_M": 56.129502
+    }
+  },
+  "multiseed": {
+    "accuracy": "0.9440 +/- 0.0249",
+    "precision_macro": "0.9402 +/- 0.0250",
+    "recall_macro": "0.9279 +/- 0.0302",
+    "f1_macro": "0.9331 +/- 0.0277",
+    "f1_weighted": "0.9436 +/- 0.0254",
+    "specificity_macro": "0.9799 +/- 0.0094",
+    "mcc": "0.9197 +/- 0.0357",
+    "kappa": "0.9192 +/- 0.0361",
+    "auc_ovr_macro": "0.9842 +/- 0.0131",
+    "pr_auc_macro": "0.9616 +/- 0.0319"
+  },
+  "HEADLINE_quote_these_not_seed42": {
+    "accuracy": {
+      "mean": 0.944008956723181,
+      "std": 0.02488522113176057,
+      "reported": "0.9440 +/- 0.0249"
+    },
+    "precision_macro": {
+      "mean": 0.9401919664334616,
+      "std": 0.02500883344147532,
+      "reported": "0.9402 +/- 0.0250"
+    },
+    "recall_macro": {
+      "mean": 0.9278643099345656,
+      "std": 0.030229188324543344,
+      "reported": "0.9279 +/- 0.0302"
+    },
+    "f1_macro": {
+      "mean": 0.933096491413066,
+      "std": 0.027744783033472494,
+      "reported": "0.9331 +/- 0.0277"
+    },
+    "f1_weighted": {
+      "mean": 0.9436458303903806,
+      "std": 0.025378357074513934,
+      "reported": "0.9436 +/- 0.0254"
+    },
+    "specificity_macro": {
+      "mean": 0.979898538557136,
+      "std": 0.009394628666506144,
+      "reported": "0.9799 +/- 0.0094"
+    },
+    "mcc": {
+      "mean": 0.9197279374895282,
+      "std": 0.03566635643151841,
+      "reported": "0.9197 +/- 0.0357"
+    },
+    "kappa": {
+      "mean": 0.9192194545526858,
+      "std": 0.0360965940822541,
+      "reported": "0.9192 +/- 0.0361"
+    },
+    "auc_ovr_macro": {
+      "mean": 0.9842320117977114,
+      "std": 0.013132478630864027,
+      "reported": "0.9842 +/- 0.0131"
+    },
+    "pr_auc_macro": {
+      "mean": 0.9616348367468452,
+      "std": 0.03191939966916761,
+      "reported": "0.9616 +/- 0.0319"
+    }
+  },
+  "seed42_role": "detail seed for Phases 8-14 and 16-18; NOT the reported result",
+  "integrity": {
+    "md5_label_conflicts": 0,
+    "distinct_image_sizes": 77
+  },
+  "explainability": {
+    "background_attention_mean": 0.4937672327583035,
+    "background_attention_p90": 0.7628200054168702,
+    "background_area_mean": 0.6474056321747448,
+    "background_mass_to_area_ratio_mean": 0.7614797485484053,
+    "background_mass_to_area_ratio_median": 0.8254156520119702,
+    "reading": "ratio 1.0 = flat heatmap; <1 = attention on the body"
+  },
+  "determinism_note": "Runs are seed-controlled (Python, NumPy, PyTorch, cuDNN deterministic mode). Bit-exact reproducibility is NOT claimed: mixed-precision training and some CUDA kernels are non-deterministic. Report metrics as mean +/- std over seeds.",
+  "environment": {
+    "torch": "2.11.0+cu130",
+    "timm": "1.0.9",
+    "device": "cuda",
+    "seeds": [
+      42,
+      1337,
+      2024
+    ]
+  },
+  "config": {
+    "SEEDS": "(42, 1337, 2024)",
+    "PRIMARY_SEED": "42",
+    "FIGSHARE_DOI": "10.6084/m9.figshare.30342133.v1",
+    "FIGSHARE_URL": "https://ndownloader.figshare.com/files/58681468",
+    "FIGSHARE_FILE": "dataset2.zip",
+    "FIGSHARE_BYTES": "1627919308",
+    "FIGSHARE_MD5": "149a1d47093a4379ef71c5805d956be6",
+    "DATA_DIR": "~/datasets/ct_kidney_figshare",
+    "DATA_CLASS_ROOT": "",
+    "CLASS_FOLDER_ALIASES": "()",
+    "EXPECTED_N": "12446",
+    "CLASSES": "('Cyst', 'Normal', 'Stone', 'Tumor')",
+    "IMG_SIZE": "224",
+    "SPLIT_RATIO": "(0.7, 0.15, 0.15)",
+    "SPLIT_METHOD": "balanced_random",
+    "DHASH_THRESH": "4",
+    "PHASH_THRESH": "7",
+    "MAX_GROUP_FRAC": "0.05",
+    "AUTO_TIGHTEN": "True",
+    "HASH_WORKERS": "8",
+    "LOCAL_BACKBONE": "convnext_tiny.fb_in1k",
+    "GLOBAL_BACKBONE": "swin_tiny_patch4_window7_224.ms_in1k",
+    "FUSION_DIM": "512",
+    "FUSION_HEADS": "8",
+    "FUSION_DROPOUT": "0.1",
+    "HEAD_DROPOUT": "0.3",
+    "EPOCHS": "50",
+    "BATCH_SIZE": "32",
+    "LR_BACKBONE": "3e-05",
+    "LR_HEAD": "0.0003",
+    "WEIGHT_DECAY": "0.05",
+    "WARMUP_EPOCHS": "3",
+    "LABEL_SMOOTHING": "0.05",
+    "EARLY_STOP_PATIENCE": "10",
+    "NUM_WORKERS": "0",
+    "USE_AMP": "True",
+    "IMBALANCE_STRATEGY": "class_weights",
+    "CLASS_WEIGHT_POWER": "1.0",
+    "CONFORMAL_ALPHA": "0.1",
+    "TARGET_COVERAGE": "0.9",
+    "TEMP_MIN": "0.05",
+    "TEMP_MAX": "10.0",
+    "ECE_BINS": "15",
+    "BOOTSTRAP_N": "1000",
+    "THRESHOLD_GRID": "((2, 4), (3, 5), (4, 7), (5, 8))",
+    "SWEEP_ARCH": "RenalDualNet",
+    "BASELINES": "('resnet50.a1_in1k', 'efficientnet_b0.ra_in1k', 'densenet201.tv_in1k', 'vit_small_patch16_224.augreg_in1k', 'swin_tiny_patch4_window7_224.ms_in1k', 'convnext_tiny.fb_in1k')",
+    "STUDENT_BACKBONE": "resnet18.a1_in1k",
+    "DISTILL_TEMP": "4.0",
+    "DISTILL_ALPHA": "0.7",
+    "ONNX_OPSET": "17",
+    "MAX_INT8_ACC_DROP": "0.02",
+    "QUICK_RUN": "False",
+    "RUN_BASELINES": "True",
+    "RUN_ABLATION": "True",
+    "RUN_LEAKAGE_EXPERIMENT": "True",
+    "LEAKAGE_ARCHS": "('RenalDualNet', 'swin_tiny_patch4_window7_224.ms_in1k')",
+    "RUN_MULTISEED": "True",
+    "RUN_WEIGHT_SWEEP": "True",
+    "RUN_DEPLOYMENT": "True",
+    "RUN_THRESHOLD_SWEEP": "True",
+    "RUN_MULTISEED_LEAKAGE": "True",
+    "LEAK_FRAC": "0.5",
+    "OUT_DIR": "./Obj1"
+  },
+  "leakage_experiment": {
+    "contamination_rate": 0.9978575254418853,
+    "design": "random vs DAP split with DIFFERENT test sets: the as-practised gap, not the contamination effect (see multiseed_inflation, paired design)",
+    "per_architecture": {
+      "RenalDualNet": {
+        "random": {
+          "accuracy": 0.9994643813604713,
+          "precision_macro": 0.9987980769230769,
+          "recall_macro": 0.9995511669658887,
+          "f1_macro": 0.9991729722122994,
+          "f1_weighted": 0.9994647860647985,
+          "specificity_macro": 0.9998493975903615,
+          "mcc": 0.9992342691593455,
+          "kappa": 0.9992338488609914,
+          "auc_ovr_macro": 1.0,
+          "pr_auc_macro": 1.0
+        },
+        "dap": {
+          "accuracy": 0.9710610932475884,
+          "precision_macro": 0.9685258226829179,
+          "recall_macro": 0.9564517832984298,
+          "f1_macro": 0.9622256042327535,
+          "f1_weighted": 0.970845433347295,
+          "specificity_macro": 0.9895981082077622,
+          "mcc": 0.9584694998701948,
+          "kappa": 0.958347801069455,
+          "auc_ovr_macro": 0.9974233886453601,
+          "pr_auc_macro": 0.9931442917088066
+        },
+        "inflation": {
+          "accuracy": 0.028403288112882952,
+          "precision_macro": 0.030272254240159002,
+          "recall_macro": 0.04309938366745891,
+          "f1_macro": 0.0369473679795459,
+          "mcc": 0.04076476928915074
+        }
+      },
+      "swin_tiny_patch4_window7_224": {
+        "random": {
+          "accuracy": 0.9989287627209427,
+          "precision_macro": 0.998823108352404,
+          "recall_macro": 0.9984637554197058,
+          "f1_macro": 0.9986411288242193,
+          "f1_weighted": 0.9989285693479644,
+          "specificity_macro": 0.999645225879114,
+          "mcc": 0.9984683409525427,
+          "kappa": 0.9984675210079722,
+          "auc_ovr_macro": 1.0,
+          "pr_auc_macro": 1.0
+        },
+        "dap": {
+          "accuracy": 0.9764201500535906,
+          "precision_macro": 0.9832350239086206,
+          "recall_macro": 0.9586281487149724,
+          "f1_macro": 0.9700137693797236,
+          "mcc": 0.9663258218206031
+        },
+        "inflation": {
+          "accuracy": 0.022508612667352046,
+          "precision_macro": 0.015588084443783345,
+          "recall_macro": 0.039835606704733406,
+          "f1_macro": 0.02862735944449568,
+          "mcc": 0.03214251913193955
+        }
+      }
+    },
+    "mean_macro_f1_inflation": 0.03278736371202079
+  },
+  "class_weight_sweep": {
+    "candidates_scored_on": "validation",
+    "selection_basis": "default_retained",
+    "selected_power": 1.0,
+    "candidates": [
+      {
+        "power": 0.0,
+        "val_accuracy": 0.883895,
+        "val_macro_f1": 0.851873,
+        "val_Stone_precision": 0.806452,
+        "val_Stone_recall": 0.791855,
+        "val_Stone_f1": 0.799087,
+        "selected": false,
+        "chosen_by": ""
+      },
+      {
+        "power": 0.5,
+        "val_accuracy": 0.912253,
+        "val_macro_f1": 0.891342,
+        "val_Stone_precision": 0.852321,
+        "val_Stone_recall": 0.914027,
+        "val_Stone_f1": 0.882096,
+        "selected": false,
+        "chosen_by": ""
+      },
+      {
+        "power": 0.75,
+        "val_accuracy": 0.898341,
+        "val_macro_f1": 0.872921,
+        "val_Stone_precision": 0.761733,
+        "val_Stone_recall": 0.954751,
+        "val_Stone_f1": 0.84739,
+        "selected": false,
+        "chosen_by": ""
+      },
+      {
+        "power": 1.0,
+        "val_accuracy": 0.904227,
+        "val_macro_f1": 0.882007,
+        "val_Stone_precision": 0.731061,
+        "val_Stone_recall": 0.873303,
+        "val_Stone_f1": 0.795876,
+        "selected": true,
+        "chosen_by": "default_retained"
+      }
+    ],
+    "test_of_selected": {
+      "accuracy": 0.9710610932475884,
+      "precision_macro": 0.9685258226829179,
+      "recall_macro": 0.9564517832984298,
+      "f1_macro": 0.9622256042327535,
+      "f1_weighted": 0.970845433347295,
+      "specificity_macro": 0.9895981082077622,
+      "mcc": 0.9584694998701948,
+      "kappa": 0.958347801069455,
+      "auc_ovr_macro": 0.9974233886453601,
+      "pr_auc_macro": 0.9931442917088066
+    }
+  },
+  "threshold_sensitivity": {
+    "grid": [
+      [
+        2,
+        4
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        4,
+        7
+      ],
+      [
+        5,
+        8
+      ]
+    ],
+    "rows": [
+      {
+        "dhash": 2.0,
+        "phash": 4.0,
+        "n_pairs": 59515.0,
+        "n_groups": 481.0,
+        "n_singletons": 36.0,
+        "largest_frac": 0.02073,
+        "mean_group_size": 25.87526,
+        "median_group_size": 12.0,
+        "test_groups": 93.0,
+        "n_eval_images": 930.0,
+        "n_eval_groups": 93.0,
+        "n_leaked_images": 932.0,
+        "n_train_images": 8715.0,
+        "clean_f1": 0.947134,
+        "contam_f1": 0.998946,
+        "clean_acc": 0.95914,
+        "contam_acc": 0.998925,
+        "inflation_f1": 0.051812,
+        "inflation_f1_ci_low": 0.021849,
+        "inflation_f1_ci_high": 0.098123,
+        "inflation_acc": 0.039785,
+        "inflation_acc_ci_low": 0.015834,
+        "inflation_acc_ci_high": 0.068693,
+        "neardup_eval_clean": 0.0,
+        "neardup_eval_contam": 0.978495
+      },
+      {
+        "dhash": 3.0,
+        "phash": 5.0,
+        "n_pairs": 85325.0,
+        "n_groups": 276.0,
+        "n_singletons": 10.0,
+        "largest_frac": 0.02073,
+        "mean_group_size": 45.094203,
+        "median_group_size": 24.5,
+        "test_groups": 50.0,
+        "n_eval_images": 936.0,
+        "n_eval_groups": 50.0,
+        "n_leaked_images": 940.0,
+        "n_train_images": 8707.0,
+        "clean_f1": 0.859705,
+        "contam_f1": 1.0,
+        "clean_acc": 0.882479,
+        "contam_acc": 1.0,
+        "inflation_f1": 0.140295,
+        "inflation_f1_ci_low": 0.065238,
+        "inflation_f1_ci_high": 0.257524,
+        "inflation_acc": 0.117521,
+        "inflation_acc_ci_low": 0.03342,
+        "inflation_acc_ci_high": 0.224069,
+        "neardup_eval_clean": 0.0,
+        "neardup_eval_contam": 0.965812
+      },
+      {
+        "dhash": 4.0,
+        "phash": 7.0,
+        "n_pairs": 131120.0,
+        "n_groups": 193.0,
+        "n_singletons": 2.0,
+        "largest_frac": 0.029809,
+        "mean_group_size": 64.487047,
+        "median_group_size": 33.0,
+        "test_groups": 31.0,
+        "n_eval_images": 933.0,
+        "n_eval_groups": 31.0,
+        "n_leaked_images": 933.0,
+        "n_train_images": 8711.0,
+        "clean_f1": 0.961638,
+        "contam_f1": 1.0,
+        "clean_acc": 0.969989,
+        "contam_acc": 1.0,
+        "inflation_f1": 0.038362,
+        "inflation_f1_ci_low": 0.015715,
+        "inflation_f1_ci_high": 0.085805,
+        "inflation_acc": 0.030011,
+        "inflation_acc_ci_low": 0.01046,
+        "inflation_acc_ci_high": 0.054328,
+        "neardup_eval_clean": 0.0,
+        "neardup_eval_contam": 0.993569
+      },
+      {
+        "dhash": 5.0,
+        "phash": 8.0,
+        "n_pairs": 165003.0,
+        "n_groups": 154.0,
+        "n_singletons": 1.0,
+        "largest_frac": 0.169452,
+        "mean_group_size": 80.818182,
+        "median_group_size": 28.0,
+        "test_groups": 31.0,
+        "n_eval_images": 942.0,
+        "n_eval_groups": 31.0,
+        "n_leaked_images": 936.0,
+        "n_train_images": 8692.0,
+        "clean_f1": 0.872079,
+        "contam_f1": 1.0,
+        "clean_acc": 0.895966,
+        "contam_acc": 1.0,
+        "inflation_f1": 0.127921,
+        "inflation_f1_ci_low": 0.056773,
+        "inflation_f1_ci_high": 0.253985,
+        "inflation_acc": 0.104034,
+        "inflation_acc_ci_low": 0.03817,
+        "inflation_acc_ci_high": 0.193376,
+        "neardup_eval_clean": 0.0,
+        "neardup_eval_contam": 0.998938
+      }
+    ],
+    "inflation_min": 0.03836213370454078,
+    "inflation_max": 0.14029506583778284,
+    "conservative_estimate": 0.03836213370454078,
+    "design": "paired: clean vs contaminated model, identical test images",
+    "note": "single seed; compare the spread with multiseed_inflation.std"
+  },
+  "multiseed_inflation": {
+    "design": "paired: clean vs contaminated model, identical test images",
+    "leak_frac": 0.5,
+    "rows": {
+      "42.0": {
+        "n_eval_images": 933.0,
+        "n_eval_groups": 31.0,
+        "n_leaked_images": 933.0,
+        "n_train_images": 8711.0,
+        "clean_f1": 0.961638,
+        "contam_f1": 1.0,
+        "clean_acc": 0.969989,
+        "contam_acc": 1.0,
+        "inflation_f1": 0.038362,
+        "inflation_f1_ci_low": 0.015715,
+        "inflation_f1_ci_high": 0.085805,
+        "inflation_acc": 0.030011,
+        "inflation_acc_ci_low": 0.01046,
+        "inflation_acc_ci_high": 0.054328,
+        "neardup_eval_clean": 0.0,
+        "neardup_eval_contam": 0.993569
+      },
+      "1337.0": {
+        "n_eval_images": 934.0,
+        "n_eval_groups": 33.0,
+        "n_leaked_images": 931.0,
+        "n_train_images": 8727.0,
+        "clean_f1": 0.929802,
+        "contam_f1": 1.0,
+        "clean_acc": 0.937901,
+        "contam_acc": 1.0,
+        "inflation_f1": 0.070198,
+        "inflation_f1_ci_low": 0.024441,
+        "inflation_f1_ci_high": 0.219223,
+        "inflation_acc": 0.062099,
+        "inflation_acc_ci_low": 0.020439,
+        "inflation_acc_ci_high": 0.106387,
+        "neardup_eval_clean": 0.0,
+        "neardup_eval_contam": 0.994647
+      },
+      "2024.0": {
+        "n_eval_images": 937.0,
+        "n_eval_groups": 32.0,
+        "n_leaked_images": 937.0,
+        "n_train_images": 8713.0,
+        "clean_f1": 0.907909,
+        "contam_f1": 1.0,
+        "clean_acc": 0.923159,
+        "contam_acc": 1.0,
+        "inflation_f1": 0.092091,
+        "inflation_f1_ci_low": 0.052124,
+        "inflation_f1_ci_high": 0.194995,
+        "inflation_acc": 0.076841,
+        "inflation_acc_ci_low": 0.03457,
+        "inflation_acc_ci_high": 0.135452,
+        "neardup_eval_clean": 0.0,
+        "neardup_eval_contam": 1.0
+      }
+    },
+    "mean": 0.06688383529738377,
+    "std": 0.02701747183022451,
+    "reported": "+0.0669 +/- 0.0270"
+  },
+  "deployment": {
+    "student": "resnet18.a1_in1k",
+    "student_params_M": 11.178564,
+    "student_macro_f1": 0.9630327426482543,
+    "table": [
+      {
+        "model": "Student FP32",
+        "size_MB": 44.7062,
+        "accuracy": 0.971667,
+        "macro_f1": 0.969653,
+        "latency_ms": 33.297815,
+        "p95_ms": 33.391006,
+        "fps": 30.032001,
+        "agree_fp32": 1.0
+      },
+      {
+        "model": "INT8 per-channel MinMax",
+        "size_MB": 11.300886,
+        "accuracy": 0.973333,
+        "macro_f1": 0.970931,
+        "latency_ms": 11.755487,
+        "p95_ms": 11.781902,
+        "fps": 85.066656,
+        "agree_fp32": 0.995
+      },
+      {
+        "model": "INT8 per-tensor MinMax",
+        "size_MB": 11.237499,
+        "accuracy": 0.971667,
+        "macro_f1": 0.96985,
+        "latency_ms": 11.722504,
+        "p95_ms": 11.751655,
+        "fps": 85.306004,
+        "agree_fp32": 0.985
+      }
+    ],
+    "shipped": "student_int8.onnx",
+    "int8_passed_gate": true
+  },
+  "multiseed_leaderboard": [
+    {
+      "model": "RenalDualNet",
+      "n_seeds": 3,
+      "f1_mean": 0.933096,
+      "f1_std": 0.027745,
+      "acc_mean": 0.944009,
+      "acc_std": 0.024885,
+      "f1_reported": "0.9331 +/- 0.0277"
+    },
+    {
+      "model": "swin_tiny_patch4_window7_224",
+      "n_seeds": 3,
+      "f1_mean": 0.921868,
+      "f1_std": 0.045536,
+      "acc_mean": 0.938845,
+      "acc_std": 0.034114,
+      "f1_reported": "0.9219 +/- 0.0455"
+    },
+    {
+      "model": "densenet201",
+      "n_seeds": 3,
+      "f1_mean": 0.889093,
+      "f1_std": 0.024269,
+      "acc_mean": 0.908278,
+      "acc_std": 0.023004,
+      "f1_reported": "0.8891 +/- 0.0243"
+    },
+    {
+      "model": "convnext_tiny",
+      "n_seeds": 3,
+      "f1_mean": 0.871187,
+      "f1_std": 0.026942,
+      "acc_mean": 0.891029,
+      "acc_std": 0.025065,
+      "f1_reported": "0.8712 +/- 0.0269"
+    },
+    {
+      "model": "RenalCGAFNet",
+      "n_seeds": 3,
+      "f1_mean": 0.870611,
+      "f1_std": 0.052172,
+      "acc_mean": 0.891403,
+      "acc_std": 0.045006,
+      "f1_reported": "0.8706 +/- 0.0522"
+    },
+    {
+      "model": "vit_small_patch16_224",
+      "n_seeds": 3,
+      "f1_mean": 0.861011,
+      "f1_std": 0.039084,
+      "acc_mean": 0.892843,
+      "acc_std": 0.039523,
+      "f1_reported": "0.8610 +/- 0.0391"
+    },
+    {
+      "model": "efficientnet_b0",
+      "n_seeds": 3,
+      "f1_mean": 0.825051,
+      "f1_std": 0.079307,
+      "acc_mean": 0.856761,
+      "acc_std": 0.065938,
+      "f1_reported": "0.8251 +/- 0.0793"
+    },
+    {
+      "model": "resnet50",
+      "n_seeds": 3,
+      "f1_mean": 0.808228,
+      "f1_std": 0.007076,
+      "acc_mean": 0.840871,
+      "acc_std": 0.013838,
+      "f1_reported": "0.8082 +/- 0.0071"
+    }
+  ],
+  "architecture_significance": {
+    "test": "paired approximate permutation on group-level accuracy, 10k perms",
+    "top_model": "densenet201",
+    "top_model_selected_on": "validation macro-F1 (seed 42)",
+    "rows": [
+      {
+        "top_model": "densenet201",
+        "vs": "RenalDualNet",
+        "acc_gap (top - vs)": -0.059685,
+        "f1_gap (top - vs)": -0.058416,
+        "p_value": 0.013799,
+        "significant@0.05": false,
+        "p_holm": 0.09659,
+        "n_comparisons": 7
+      },
+      {
+        "top_model": "densenet201",
+        "vs": "swin_tiny_patch4_window7_224",
+        "acc_gap (top - vs)": -0.053882,
+        "f1_gap (top - vs)": -0.066205,
+        "p_value": 0.019998,
+        "significant@0.05": false,
+        "p_holm": 0.119988,
+        "n_comparisons": 7
+      },
+      {
+        "top_model": "densenet201",
+        "vs": "vit_small_patch16_224",
+        "acc_gap (top - vs)": 0.059661,
+        "f1_gap (top - vs)": 0.032291,
+        "p_value": 0.082092,
+        "significant@0.05": false,
+        "p_holm": 0.410459,
+        "n_comparisons": 7
+      },
+      {
+        "top_model": "densenet201",
+        "vs": "convnext_tiny",
+        "acc_gap (top - vs)": -0.036921,
+        "f1_gap (top - vs)": 0.008048,
+        "p_value": 0.360664,
+        "significant@0.05": false,
+        "p_holm": 1.0,
+        "n_comparisons": 7
+      },
+      {
+        "top_model": "densenet201",
+        "vs": "resnet50",
+        "acc_gap (top - vs)": 0.027665,
+        "f1_gap (top - vs)": 0.097638,
+        "p_value": 0.367063,
+        "significant@0.05": false,
+        "p_holm": 1.0,
+        "n_comparisons": 7
+      },
+      {
+        "top_model": "densenet201",
+        "vs": "efficientnet_b0",
+        "acc_gap (top - vs)": -0.024855,
+        "f1_gap (top - vs)": -0.009556,
+        "p_value": 0.453555,
+        "significant@0.05": false,
+        "p_holm": 1.0,
+        "n_comparisons": 7
+      },
+      {
+        "top_model": "densenet201",
+        "vs": "RenalCGAFNet",
+        "acc_gap (top - vs)": -0.0171,
+        "f1_gap (top - vs)": -0.021421,
+        "p_value": 0.557844,
+        "significant@0.05": false,
+        "p_holm": 1.0,
+        "n_comparisons": 7
+      }
+    ],
+    "n_not_significant": 7
+  },
+  "cross_class_verdict": {
+    "rows": [
+      {
+        "group_id": 66,
+        "size": 147,
+        "purity": 0.5034013605442177,
+        "composition": "Normal:74, Stone:61, Cyst:12",
+        "verdict": "over_merged",
+        "n_train": 0,
+        "n_val": 0,
+        "n_test": 147
+      },
+      {
+        "group_id": 177,
+        "size": 281,
+        "purity": 0.5338078291814946,
+        "composition": "Normal:150, Tumor:131",
+        "verdict": "over_merged",
+        "n_train": 281,
+        "n_val": 0,
+        "n_test": 0
+      },
+      {
+        "group_id": 82,
+        "size": 151,
+        "purity": 0.5364238410596026,
+        "composition": "Normal:81, Cyst:70",
+        "verdict": "over_merged",
+        "n_train": 0,
+        "n_val": 0,
+        "n_test": 151
+      },
+      {
+        "group_id": 109,
+        "size": 128,
+        "purity": 0.578125,
+        "composition": "Cyst:74, Normal:54",
+        "verdict": "over_merged",
+        "n_train": 128,
+        "n_val": 0,
+        "n_test": 0
+      },
+      {
+        "group_id": 189,
+        "size": 330,
+        "purity": 0.6121212121212121,
+        "composition": "Tumor:202, Normal:128",
+        "verdict": "over_merged",
+        "n_train": 330,
+        "n_val": 0,
+        "n_test": 0
+      },
+      {
+        "group_id": 30,
+        "size": 371,
+        "purity": 0.6684636118598383,
+        "composition": "Cyst:248, Tumor:123",
+        "verdict": "over_merged",
+        "n_train": 371,
+        "n_val": 0,
+        "n_test": 0
+      },
+      {
+        "group_id": 33,
+        "size": 240,
+        "purity": 0.7208333333333333,
+        "composition": "Stone:173, Cyst:67",
+        "verdict": "over_merged",
+        "n_train": 240,
+        "n_val": 0,
+        "n_test": 0
+      },
+      {
+        "group_id": 190,
+        "size": 231,
+        "purity": 0.7662337662337663,
+        "composition": "Tumor:177, Normal:54",
+        "verdict": "over_merged",
+        "n_train": 231,
+        "n_val": 0,
+        "n_test": 0
+      },
+      {
+        "group_id": 85,
+        "size": 354,
+        "purity": 0.9491525423728814,
+        "composition": "Normal:336, Stone:18",
+        "verdict": "over_merged",
+        "n_train": 354,
+        "n_val": 0,
+        "n_test": 0
+      }
+    ],
+    "n_over_merged": 9,
+    "over_merged_image_frac": 0.17941507311586052
+  },
+  "size_shortcut_audit": {
+    "verdict": "scan_fingerprint",
+    "n_distinct_sizes": 77,
+    "size_only_accuracy_grouped_cv": 0.4073276554716375,
+    "size_only_accuracy_random_cv_INVALID": 0.6235738389844127,
+    "majority_baseline": 0.40792222400771333,
+    "mutual_information_nats": 0.39733609698236433,
+    "mi_scan_permutation_null_mean": 0.4634565891033323,
+    "mi_scan_permutation_p": 0.954045954045954,
+    "mi_excess_share_of_label_entropy": 0.0,
+    "view_only_accuracy_grouped_cv": 0.4079222240077133,
+    "scans_axial": 105,
+    "scans_coronal": 88
+  },
+  "conformal_valid_alphas": [
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "conformal_degenerate_alphas": [
+    0.3,
+    0.4
+  ],
+  "cross_class_verdict_status": "over_merged",
+  "nondeterministic_models": [],
+  "contrast_phase_audit": {
+    "status": "not_labelled"
+  },
+  "external_validation": {
+    "models": [
+      "RenalDualNet (teacher, seed 42)",
+      "Swin-T (seed 42, best DAP model)",
+      "Shipped student (student_int8, T=0.62)"
+    ],
+    "cohorts": {
+      "yildirim": {
+        "status": "not_found",
+        "root": "/home/score/datasets/Kidney_stone_detection/Dataset"
+      },
+      "axial": {
+        "status": "not_found",
+        "root": "/home/score/datasets/axial_stone/Kindey Stone Dataset/Original"
+      }
+    },
+    "student": {
+      "model_file": "student_int8.onnx",
+      "temperature": 0.62,
+      "abstention_threshold": 0.961422324180603
+    },
+    "summary": [
+      {
+        "cohort": "DAP test (Normal+Stone)",
+        "model": "RenalDualNet (teacher, seed 42)",
+        "n_groups": 18,
+        "n": 972,
+        "stone_sensitivity": 0.907317,
+        "specificity": 1.0,
+        "normal_recall": 1.0,
+        "balanced_accuracy": 0.953659,
+        "auc_p_stone": 0.989843,
+        "exact_class_accuracy": 0.980453,
+        "balanced_accuracy_ci": "[0.891, 0.982]",
+        "auc_p_stone_ci": "[0.963, 1.000]",
+        "normal_recall_ci": "[1.000, 1.000]"
+      },
+      {
+        "cohort": "DAP test (Normal+Stone)",
+        "model": "Swin-T (seed 42, best DAP model)",
+        "n_groups": 18,
+        "n": 972,
+        "stone_sensitivity": 0.907317,
+        "specificity": 1.0,
+        "normal_recall": 1.0,
+        "balanced_accuracy": 0.953659,
+        "auc_p_stone": 0.991529,
+        "exact_class_accuracy": 0.980453,
+        "balanced_accuracy_ci": "[0.893, 0.979]",
+        "auc_p_stone_ci": "[0.977, 0.999]",
+        "normal_recall_ci": "[1.000, 1.000]"
+      },
+      {
+        "cohort": "DAP test (Normal+Stone)",
+        "model": "Shipped student (student_int8, T=0.62)",
+        "n_groups": 18,
+        "n": 972,
+        "stone_sensitivity": 0.960976,
+        "specificity": 1.0,
+        "normal_recall": 0.985658,
+        "balanced_accuracy": 0.980488,
+        "auc_p_stone": 0.999498,
+        "exact_class_accuracy": 0.980453,
+        "balanced_accuracy_ci": "[0.932, 1.000]",
+        "auc_p_stone_ci": "[0.997, 1.000]",
+        "normal_recall_ci": "[0.962, 1.000]"
+      }
+    ],
+    "verdict": "not_run"
+  },
+  "manuscript_framing": "benchmark-integrity study with two findings: near-duplicate leakage and a contrast-phase protocol confound (external validation fails); RenalCGAFNet is a negative result; no architecture-superiority or clinical claim"
+}
